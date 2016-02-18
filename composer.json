@@ -12,6 +12,7 @@
         "magento-hackathon/magento-composer-installer": "^3.0.5"
     },
     "require-dev": {
+        "magento/core": "1.9.2.3",
         "aoepeople/aoe_templatehints": "0.4.1",
         "phpspec/phpspec": "^2.4"
     },
