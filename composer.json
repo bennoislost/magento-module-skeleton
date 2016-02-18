@@ -42,5 +42,8 @@
             ],
             "git-ignore-append": false
         }
+    },
+    "config": {
+        "bin-dir": "bin"
     }
 }

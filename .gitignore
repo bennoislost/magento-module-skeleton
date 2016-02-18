@@ -3,6 +3,7 @@
 #
 src/magento/.gitignore
 /vendor/
+/bin/
 
 #
 # 3rd Party Vendors
