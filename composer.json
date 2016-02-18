@@ -1,0 +1,45 @@
+{
+    "name": "bennoislost/magento-module-skeleton",
+    "type": "magento-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ben McManus"
+        }
+    ],
+    "require": {
+        "aydin-hassan/magento-core-composer-installer" : "~1.0",
+        "magento-hackathon/magento-composer-installer": "^3.0.5"
+    },
+    "require-dev": {
+        "aoepeople/aoe_templatehints": "0.4.1",
+        "phpspec/phpspec": "^2.4"
+    },
+    "autoload": {
+        "psr-0": {
+            "": [
+                "src/magento/app",
+                "src/magento/app/code/local",
+                "src/magento/app/code/community",
+                "src/magento/app/code/core",
+                "src/magento/lib"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://packages.firegento.com"
+        }
+    ],
+    "extra": {
+        "magento-root-dir": "src/magento",
+        "with-bootstrap-patch": false,
+        "magento-core-deploy" : {
+            "excludes": [
+                ".htaccess"
+            ],
+            "git-ignore-append": false
+        }
+    }
+}

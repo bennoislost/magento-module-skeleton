@@ -1,0 +1,11 @@
+#
+# Project
+#
+/vendor/
+
+#
+# 3rd Party Vendors
+#
+src/magento/app/code/community/Aoe/TemplateHints
+src/magento/app/etc/modules/Aoe_TemplateHints.xml
+src/magento/skin/frontend/base/default/aoe_templatehints
