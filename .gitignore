@@ -1,13 +1,35 @@
 #
 # Project
 #
-src/magento/.gitignore
+/src/magento/.gitignore
 /vendor/
 /bin/
+/composer.lock
 
 #
-# 3rd Party Vendors
+# Composer Dev - 3rd Party Vendors
 #
+
+# Aoe_TemplateHints
 src/magento/app/code/community/Aoe/TemplateHints
 src/magento/app/etc/modules/Aoe_TemplateHints.xml
 src/magento/skin/frontend/base/default/aoe_templatehints
+
+# Aoe_Profiler
+src/magento/app/code/community/Aoe/Profiler
+src/magento/app/etc/modules/Aoe_Profiler.xml
+src/magento/app/code/community/Varien/Profiler.php
+src/magento/app/code/community/Zend/Db/Profiler.php
+src/magento/skin/frontend/base/default/aoe_profiler
+src/magento/skin/adminhtml/base/default/aoe_profiler
+
+# Debugbar
+src/magento/app/code/community/Sheep/Debug
+src/magento/app/etc/modules/Sheep_Debug.xml
+src/magento/app/design/frontend/base/default/template/sheep_debug
+src/magento/app/design/frontend/base/default/layout/sheep_debug.xml
+src/magento/skin/frontend/base/default/sheep_debug
+src/magento/app/design/adminhtml/default/default/template/sheep_debug
+src/magento/app/design/adminhtml/default/default/layout/sheep_debug.xml
+src/magento/skin/adminhtml/default/default/sheep_debug
+
