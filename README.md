@@ -27,12 +27,9 @@ Magento core will be installed to `src/magento`
 
 Using `n98-magerun` you can create a new module form the above directory
 
-### PHPSpec
-
-To avoid Mage-god-class-hell, PHPSpec will create your classes in `src/Magento/lib`
 
 ## Roadmap
 
 * Scrutinizer
-* BehatMage
+* Behat
 
