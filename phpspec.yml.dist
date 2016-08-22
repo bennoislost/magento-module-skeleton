@@ -1,4 +1,0 @@
-suites:
-  magento_module:
-    src_path: 'src/magento/lib'
-    formatter.name: pretty

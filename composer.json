@@ -7,14 +7,11 @@
             "name": "Ben McManus"
         }
     ],
-    "require": {
-        "aydin-hassan/magento-core-composer-installer" : "~1.0",
-        "magento-hackathon/magento-composer-installer": "^3.0.5"
-    },
     "require-dev": {
+        "aydin-hassan/magento-core-composer-installer" : "~1.0",
+        "magento-hackathon/magento-composer-installer": "^3.0.5",
         "magento/core": "1.9.2.3",
-        "aoepeople/aoe_templatehints": "0.4.1",
-        "phpspec/phpspec": "^2.4"
+        "bennoislost/magento-developer-meta": "^1.0"
     },
     "autoload": {
         "psr-0": {
@@ -30,7 +27,7 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "http://packages.firegento.com"
+            "url": "https://packages.firegento.com"
         }
     ],
     "extra": {
@@ -39,8 +36,7 @@
         "magento-core-deploy" : {
             "excludes": [
                 ".htaccess"
-            ],
-            "git-ignore-append": false
+            ]
         }
     },
     "config": {
