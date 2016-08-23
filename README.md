@@ -1,5 +1,7 @@
 # Magento Module Skeleton
 
+[![Build Status](https://travis-ci.org/bennoislost/magento-module-skeleton.svg?branch=feature%2Ftravis)](https://travis-ci.org/bennoislost/magento-module-skeleton)
+
 A snapshot of how a Magento 1.x module should be started.
 
 ## Snapshot
