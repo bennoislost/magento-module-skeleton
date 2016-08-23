@@ -17,9 +17,5 @@ mysql:
     - encoding: utf8
 env:
   - MAGENTO_VERSION=magento-ce-1.9.1.0
-  - MAGENTO_VERSION=magento-ce-1.9.0.1
-  - MAGENTO_VERSION=magento-ce-1.8.1.0
-  - MAGENTO_VERSION=magento-ce-1.8.0.0
-  - MAGENTO_VERSION=magento-ce-1.7.0.2
 before_script:
   - mysql -e 'create database travis_ci_magento_module'
