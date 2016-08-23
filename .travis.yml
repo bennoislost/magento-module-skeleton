@@ -3,19 +3,42 @@ branches:
   only:
     - master
     - /^(hotfix|feature)\/.*$/
+
 php:
-  - 5.3
   - 5.4
   - 5.5
   - 5.6
+
 matrix:
   allow_failures:
   - php: hhvm
-mysql:
-    - database: travis_ci_magento_module
-    - username: root
-    - encoding: utf8
+
+services:
+  - mysql
+
 env:
-  - MAGENTO_VERSION=magento-ce-1.9.1.0
-before_script:
-  - mysql -e 'create database travis_ci_magento_module'
+  - MAGENTO_VERSION=magento-mirror-1.9.2.4
+  - MAGENTO_VERSION=magento-mirror-1.9.2.0
+  - MAGENTO_VERSION=magento-mirror-1.9.1.0
+  - MAGENTO_VERSION=magento-mirror-1.8.1.0
+  - MAGENTO_VERSION=magento-mirror-1.7.0.2
+
+cache:
+  directories:
+    - $HOME/.composer/cache
+
+before_install:
+  - export PATH=./bin:$PATH
+  - if [[ ${TRAVIS_PHP_VERSION:0:4} != "hhvm" ]]; then phpenv config-rm xdebug.ini; fi
+
+install:
+    - composer remove --dev --ignore-platform-reqs magento/core
+
+before_script: ./tools/ci/travis/before_script.sh
+
+script:
+  - behat -v
+  # - phpcs --standard=vendor/magento-ecg/coding-standard/Ecg src/magento/app/code/core/Mage/Bundle/{Block,Model,Helper}
+
+notifications:
+  email: false
