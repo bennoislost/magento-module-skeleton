@@ -53,6 +53,7 @@
     "scripts": {
         "mage:redeploy": "@composer run-script post-install-cmd -vvv -- --redeploy",
         "mage:cache:flush": "rm -rf src/magento/var/cache/*",
+        "tests": "bin/behat -v",
         "sniff": "bin/phpcs --standard=vendor/magento/marketplace-eqp/MEQP1 magento/app/code/core/Mage/Cms/{Block,Model,Helper}"
     },
     "config": {
