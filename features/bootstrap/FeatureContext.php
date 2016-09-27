@@ -20,7 +20,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function __construct()
     {
-        $this->_magentoRoot = realpath(__DIR__ . '/../../src/magento');
+        $this->_magentoRoot = realpath(__DIR__ . '/../../magento');
     }
 
     /**
@@ -42,7 +42,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iViewAllAvailableModules()
     {
-        $jsonResponse = shell_exec("n98-magerun.phar dev:module:list --root-dir=src/magento/ --format=json");
+        $jsonResponse = shell_exec("n98-magerun.phar dev:module:list --root-dir=magento/ --format=json");
         $this->_allModules = json_decode($jsonResponse, true);
     }
 
@@ -56,7 +56,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
         if($index === false) {
             throw new Exception($moduleCode . " not found in modules list");
         }
-        
+
         $this->_foundModule = $this->_allModules[$index];
     }
 
