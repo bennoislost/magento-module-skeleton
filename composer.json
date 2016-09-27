@@ -39,6 +39,7 @@
     },
     "extra": {
         "magento-root-dir": "magento",
+        "auto-append-gitignore": true,
         "with-bootstrap-patch": false,
         "magento-core-deploy": {
             "excludes": [
