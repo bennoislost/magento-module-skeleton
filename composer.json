@@ -19,12 +19,15 @@
     "autoload": {
         "psr-0": {
             "": [
-                "src/magento/app",
-                "src/magento/app/code/local",
-                "src/magento/app/code/community",
-                "src/magento/app/code/core",
-                "src/magento/lib"
+                "magento/app",
+                "magento/app/code/local",
+                "magento/app/code/community",
+                "magento/app/code/core",
+                "magento/lib"
             ]
+        },
+        "psr-4": {
+            "PhpParser\\": "vendor/nikic/php-parser/lib/PhpParser/"
         }
     },
     "repositories": {
@@ -38,8 +41,9 @@
         }
     },
     "extra": {
-        "magento-root-dir": "src/magento",
-        "with-bootstrap-patch": false,
+        "magento-root-dir": "magento",
+        "auto-append-gitignore": true,
+        "with-bootstrap-patch": true,
         "magento-core-deploy": {
             "excludes": [
                 ".htaccess"
@@ -47,8 +51,9 @@
         }
     },
     "scripts": {
-        "sniff": "bin/phpcs --standard=vendor/magento/marketplace-eqp/MEQP1 src/magento/app/code/core/Mage/Cms/{Block,Model,Helper}",
-        "clearCache": "rm -rf src/magento/var/cache/*"
+        "mage:redeploy": "@composer run-script post-install-cmd -vvv -- --redeploy",
+        "mage:cache:flush": "rm -rf src/magento/var/cache/*",
+        "sniff": "bin/phpcs --standard=vendor/magento/marketplace-eqp/MEQP1 src/magento/app/code/core/Mage/Cms/{Block,Model,Helper}"
     },
     "config": {
         "bin-dir": "bin"
