@@ -25,6 +25,9 @@
                 "magento/app/code/core",
                 "magento/lib"
             ]
+        },
+        "psr-4": {
+            "PhpParser\\": "vendor/nikic/php-parser/lib/PhpParser/"
         }
     },
     "repositories": {
@@ -40,7 +43,7 @@
     "extra": {
         "magento-root-dir": "magento",
         "auto-append-gitignore": true,
-        "with-bootstrap-patch": false,
+        "with-bootstrap-patch": true,
         "magento-core-deploy": {
             "excludes": [
                 ".htaccess"
