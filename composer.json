@@ -51,8 +51,9 @@
         }
     },
     "scripts": {
-        "sniff": "bin/phpcs --standard=vendor/magento/marketplace-eqp/MEQP1 src/magento/app/code/core/Mage/Cms/{Block,Model,Helper}",
-        "clearCache": "rm -rf src/magento/var/cache/*"
+        "mage:redeploy": "@composer run-script post-install-cmd -vvv -- --redeploy",
+        "mage:cache:flush": "rm -rf src/magento/var/cache/*",
+        "sniff": "bin/phpcs --standard=vendor/magento/marketplace-eqp/MEQP1 src/magento/app/code/core/Mage/Cms/{Block,Model,Helper}"
     },
     "config": {
         "bin-dir": "bin"
