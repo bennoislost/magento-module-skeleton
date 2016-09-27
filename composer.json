@@ -19,11 +19,11 @@
     "autoload": {
         "psr-0": {
             "": [
-                "src/magento/app",
-                "src/magento/app/code/local",
-                "src/magento/app/code/community",
-                "src/magento/app/code/core",
-                "src/magento/lib"
+                "magento/app",
+                "magento/app/code/local",
+                "magento/app/code/community",
+                "magento/app/code/core",
+                "magento/lib"
             ]
         }
     },
@@ -38,7 +38,7 @@
         }
     },
     "extra": {
-        "magento-root-dir": "src/magento",
+        "magento-root-dir": "magento",
         "with-bootstrap-patch": false,
         "magento-core-deploy": {
             "excludes": [
