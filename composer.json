@@ -40,11 +40,15 @@
     "extra": {
         "magento-root-dir": "src/magento",
         "with-bootstrap-patch": false,
-        "magento-core-deploy" : {
+        "magento-core-deploy": {
             "excludes": [
                 ".htaccess"
             ]
         }
+    },
+    "scripts": {
+        "sniff": "bin/phpcs --standard=vendor/magento/marketplace-eqp/MEQP1 src/magento/app/code/core/Mage/Cms/{Block,Model,Helper}",
+        "clearCache": "rm -rf src/magento/var/cache/*"
     },
     "config": {
         "bin-dir": "bin"
