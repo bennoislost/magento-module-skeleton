@@ -16,11 +16,11 @@ services:
   - mysql
 
 env:
-  - MAGENTO_VERSION=magento-mirror-1.9.2.4
-  - MAGENTO_VERSION=magento-mirror-1.9.2.0
-  - MAGENTO_VERSION=magento-mirror-1.9.1.0
-  - MAGENTO_VERSION=magento-mirror-1.8.1.0
-  - MAGENTO_VERSION=magento-mirror-1.7.0.2
+  - MAGENTO_COMPOSER_VERSION="magento/core:1.9.2.4" MAGENTO_INSTALL_VERSION=1.9.2.4
+  - MAGENTO_COMPOSER_VERSION="magento/core:1.9.2.0" MAGENTO_INSTALL_VERSION=1.9.2.0
+  - MAGENTO_COMPOSER_VERSION="magento/core:1.9.1.0" MAGENTO_INSTALL_VERSION=1.9.1.0
+  - MAGENTO_COMPOSER_VERSION="magento/core:1.8.1.0" MAGENTO_INSTALL_VERSION=1.8.1.0
+  - MAGENTO_COMPOSER_VERSION="magento/core:1.7.0.2" MAGENTO_INSTALL_VERSION=1.7.0.2
 
 cache:
   directories:
@@ -28,16 +28,18 @@ cache:
 
 before_install:
   - export PATH=./bin:$PATH
-  - if [[ ${TRAVIS_PHP_VERSION:0:4} != "hhvm" ]]; then phpenv config-rm xdebug.ini; fi
+  - phpenv config-rm xdebug.ini || true
 
 install:
     - composer remove --dev --ignore-platform-reqs magento/core
+    - composer require --dev --ignore-platform-reqs ${MAGENTO_COMPOSER_VERSION}
+    - composer mage:redeploy
 
 before_script: ./tools/ci/travis/before_script.sh
 
 script:
   - behat -v
-  # - phpcs --standard=vendor/magento-ecg/coding-standard/Ecg src/magento/app/code/core/Mage/Bundle/{Block,Model,Helper}
+  # - phpcs --standard=vendor/magento-ecg/coding-standard/Ecg magento/app/code/core/Mage/Bundle/{Block,Model,Helper}
 
 notifications:
   email: false
