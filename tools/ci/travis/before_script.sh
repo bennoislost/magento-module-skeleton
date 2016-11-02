@@ -47,4 +47,5 @@ n98-magerun.phar install \
     --magentoVersion=${MAGENTO_INSTALL_VERSION} \
     --installationFolder=${MAGENTO_ROOT} \
     --noDownload \
+    --forceUseDb \
     --baseUrl="http://magento.travis/" || { echo "Magento install failed"; exit 1; }
