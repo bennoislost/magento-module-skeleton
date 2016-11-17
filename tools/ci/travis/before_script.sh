@@ -5,7 +5,7 @@ if [ ! -z $TRAVIS_BUILD_DIR ] ; then PROJECT_DIR=$TRAVIS_BUILD_DIR; fi
 
 cd $PROJECT_DIR
 
-MAGENTO_ROOT=${PROJECT_DIR}/src/magento
+MAGENTO_ROOT=${PROJECT_DIR}/magento
 BIN_DIR=${PROJECT_DIR}/bin
 
 mkdir -p ${BIN_DIR}
@@ -44,6 +44,10 @@ n98-magerun.phar install \
     --dbName=${MAGENTO_INSTALL_DB_NAME} \
     --installSampleData=yes \
     --useDefaultConfigParams=yes \
-    --magentoVersionByName=${MAGENTO_VERSION} \
+    --magentoVersion=${MAGENTO_INSTALL_VERSION} \
     --installationFolder=${MAGENTO_ROOT} \
+    --noDownload \
+    --forceUseDb \
+    --locale 'en_GB' \
+    --timezone 'Europe/Berlin' \
     --baseUrl="http://magento.travis/" || { echo "Magento install failed"; exit 1; }
