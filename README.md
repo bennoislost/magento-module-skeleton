@@ -12,6 +12,21 @@ Clone repository..
 git clone git@github.com:bennoislost/magento-module-skeleton.git .
 ```
 
+To install the `magento/magento-eqp` package you will have to authenticate against `repo.magento.com`
+
+```
+"http-basic": {
+    "repo.magento.com": {
+        "username":"<your public key>",
+        "password":"<your private key>"
+    }
+}
+```
+
+You can create magento authentication keys here: [http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html](http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html)
+
+You can define Composer authentication here: [https://getcomposer.org/doc/articles/http-basic-authentication.md](https://getcomposer.org/doc/articles/http-basic-authentication.md)
+
 ## Usage
 
 `composer install` command will download and extract magento core with useful development modules into `./magento`. From here you can use a tool like `n98-magerun.phar` to create your skeleton module structure.

@@ -36,8 +36,8 @@
             "url": "https://packages.firegento.com"
         },
         "magento-eqp": {
-            "type": "git",
-            "url": "https://github.com/magento/marketplace-eqp"
+            "type": "composer",
+            "url": "https://repo.magento.com"
         }
     },
     "extra": {
@@ -54,7 +54,7 @@
         "mage:redeploy": "@composer run-script post-install-cmd -vvv -- --redeploy",
         "mage:cache:flush": "rm -rf magento/var/cache/*",
         "tests": "bin/behat -v",
-        "sniff": "bin/phpcs --standard=vendor/magento/marketplace-eqp/MEQP1 magento/app/code/core/Mage/Cms/{Block,Model,Helper}"
+        "sniff": "bin/phpcs --standard=vendor/magento/marketplace-eqp/MEQP1 magento/app/code/core/Mage/GoogleAnalytics/{Block,Model,Helper}"
     },
     "config": {
         "bin-dir": "bin"
